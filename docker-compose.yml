@@ -1,0 +1,22 @@
+hubot_messenger:
+  image: fredyalo/hubot-messenger
+  volumes:
+    - ./scripts:/app/scripts
+    - /etc/localtime:/etc/localtime:ro
+  ports:
+    - 8089:8089
+  restart: always
+  environment:
+    - PORT=8089
+    - REDIS_URL=redis://redis:6379
+    - HUBOT_LOG_LEVEL=debug
+    - MESSENGER_VERIFY_TOKEN=XXX
+    - MESSENGER_ACCESS_TOKEN=SSS
+  links:
+    - redis
+  command: ./bin/hubot -a messenger-bot
+redis:
+  image: redis
+  volumes:
+    - ./redis:/data
+    - /etc/localtime:/etc/localtime:ro
