@@ -12,7 +12,7 @@ This adapter currently supports:
 - [x] Basic sending / receiving
 - [x] Resolving user IDs to their full names
 - [x] Tracking user ID, message ID, recipient ID (page)
-- [x] Auto-truncating long messages
+    - [x] Auto-truncating long messages
 
 ### 320 characters limit
 
@@ -35,6 +35,7 @@ The adapter requires your _verification token_, and _access token_ to function. 
 ## Run the image
 ```sh
 docker-compose up -d && docker-compose logs  && ./ngrock http 8089
+```
 
 ## Configuration
 
